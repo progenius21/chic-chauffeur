@@ -100,7 +100,16 @@ export default function Home() {
       </section>
 
       {/* Heritage Story */}
-      <section id="heritage" className="py-24 bg-cream">
+      <section id="heritage" className="py-24 bg-cream relative overflow-hidden">
+        {/* Subtle background branding */}
+        <div className="absolute top-20 right-10 w-32 h-12 opacity-5">
+          <Image
+            src="/images/coupe-script.svg"
+            alt=""
+            fill
+            className="object-contain"
+          />
+        </div>
         <Container>
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -243,6 +252,16 @@ export default function Home() {
               </div>
             </div>
             <div className="border-t border-cream/20 pt-6">
+              <div className="flex items-center justify-center space-x-4 mb-3">
+                <div className="w-16 h-6 relative opacity-60">
+                  <Image
+                    src="/images/coupe-script.svg"
+                    alt="Coupé"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              </div>
               <p className="text-cream/60 text-sm source-serif-text">
                 © 2024 London Coupes. Preserving British automotive heritage with distinction.
               </p>
