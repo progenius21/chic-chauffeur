@@ -10,7 +10,7 @@ export default function Home() {
         <Container>
                       <div className="flex items-center justify-between py-4 sm:py-5 md:py-6">
               <div className="flex items-center space-x-3 sm:space-x-4">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 relative flex-shrink-0">
+                <div className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 relative flex-shrink-0">
                   <Image
                     src="/images/london-coupes-original.png"
                     alt="London Coupes Logo"
@@ -19,7 +19,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="flex flex-col justify-center">
-                  <h1 className="text-lg sm:text-xl md:text-2xl text-navy font-semibold leading-none sm:leading-tight pt-3 sm:pt-0">London Coupes</h1>
+                  <h1 className="text-lg sm:text-xl md:text-2xl text-navy font-semibold leading-none sm:leading-tight mt-1 sm:mt-0">London Coupes</h1>
                   <p className="text-xs text-warm-grey uppercase tracking-wider hidden sm:block mt-1">Distinguished Service</p>
                 </div>
               </div>
@@ -31,8 +31,8 @@ export default function Home() {
               <Button size="sm">Book Now</Button>
             </nav>
             {/* Mobile Menu Button */}
-            <div className="md:hidden">
-              <Button size="sm" className="text-sm px-4">Book Now</Button>
+            <div className="md:hidden flex items-center">
+              <Button size="sm" className="text-sm px-6 py-2 font-semibold">Book Now</Button>
             </div>
           </div>
         </Container>
