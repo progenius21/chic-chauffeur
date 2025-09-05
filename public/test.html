@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TEST PAGE</title>
+    <style>
+        body { 
+            background: red; 
+            color: white; 
+            font-size: 30px; 
+            padding: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔴 DIRECT TEST PAGE 🔴</h1>
+    <p>If you can see this RED page, the server is working!</p>
+    <p>Current time: <span id="time"></span></p>
+    <script>
+        document.getElementById('time').textContent = new Date().toLocaleTimeString();
+    </script>
+</body>
+</html>

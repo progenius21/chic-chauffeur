@@ -35,9 +35,20 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="pt-36 pb-24 bg-gradient-to-b from-cream to-white">
+      <section className="pt-36 pb-24 bg-gradient-to-b from-cream to-white relative overflow-hidden">
+        {/* Subtle background image */}
+        <div className="absolute inset-0 opacity-5">
+          <Image
+            src="/images/rover-p5b-front.jpg"
+            alt=""
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
+        </div>
         <Container>
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center relative z-10">
             <h1 className="text-navy mb-6">
               Experience Timeless Elegance
             </h1>
@@ -51,6 +62,10 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="text-lg px-10">Book Your Journey</Button>
               <Button variant="secondary" size="lg" className="text-lg px-10">Learn More</Button>
+            </div>
+            {/* Simple Chrome Script */}
+            <div className="mt-12 text-center">
+              <h3 className="text-4xl italic font-serif" style={{ color: '#d4af37' }}>Coupé</h3>
             </div>
           </div>
         </Container>
@@ -102,13 +117,8 @@ export default function Home() {
       {/* Heritage Story */}
       <section id="heritage" className="py-24 bg-cream relative overflow-hidden">
         {/* Subtle background branding */}
-        <div className="absolute top-20 right-10 w-32 h-12 opacity-5">
-          <Image
-            src="/images/coupe-script.svg"
-            alt=""
-            fill
-            className="object-contain"
-          />
+        <div className="absolute top-20 right-10 opacity-30">
+          <span className="text-5xl italic font-serif" style={{ color: '#d4af37' }}>Coupé</span>
         </div>
         <Container>
           <div className="max-w-4xl mx-auto">
@@ -122,13 +132,14 @@ export default function Home() {
                     more than transportation—it embodies a philosophy of elegance and attention to detail.
                   </p>
                   <p>
+                    In our heritage workshop, master craftsmen continue the time-honored traditions of 
+                    precision engineering. Every component receives the same meticulous care that defined 
+                    the golden era of British automotive excellence.
+                  </p>
+                  <p>
                     Each journey with us is a step back into an era when luxury meant substance, when 
                     quality was paramount, and when every detail reflected the highest standards of 
                     British engineering and design.
-                  </p>
-                  <p>
-                    Today, we continue this tradition, offering discerning clients an authentic 
-                    experience that honors the past while meeting the demands of modern life.
                   </p>
                 </div>
                 <div className="mt-8">
@@ -136,13 +147,20 @@ export default function Home() {
                 </div>
               </div>
               <div className="bg-white p-8 rounded-classic shadow-sm">
-                <div className="aspect-square bg-navy/5 rounded-classic flex items-center justify-center">
-                  <span className="text-4xl text-navy">🏛️</span>
+                <div className="aspect-square rounded-classic overflow-hidden bg-navy/5 flex items-center justify-center">
+                  <Image
+                    src="/images/workshop-craftsmanship.jpg"
+                    alt="Master craftsman working on vehicle components in our heritage workshop"
+                    width={400}
+                    height={400}
+                    className="w-full h-full object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+                  />
                 </div>
                 <div className="mt-6 text-center">
-                  <h3 className="text-lg text-navy mb-2">Founded in Tradition</h3>
+                  <h3 className="text-lg text-navy mb-2">Master Craftsmanship</h3>
                   <p className="text-sm text-warm-grey source-serif-text">
-                    Celebrating British automotive heritage with every journey
+                    Every detail receives the meticulous attention of skilled artisans
                   </p>
                 </div>
               </div>
@@ -162,9 +180,10 @@ export default function Home() {
               </p>
             </div>
             <div className="bg-cream rounded-classic p-12">
-              <div className="aspect-video bg-navy/5 rounded-classic mb-8 flex items-center justify-center relative overflow-hidden">
-                <div className="text-center">
-                  <div className="w-32 h-32 mx-auto mb-4 relative">
+              {/* Logo Information Section */}
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center space-x-4 bg-navy/5 px-8 py-4 rounded-classic">
+                  <div className="w-16 h-16 relative">
                     <Image
                       src="/images/london-coupes-original.png"
                       alt="London Coupes - Professional Chauffeur Service"
@@ -172,8 +191,30 @@ export default function Home() {
                       className="object-contain"
                     />
                   </div>
-                  <p className="text-navy text-xl source-serif-text">Distinguished Rover P5B Service</p>
-                  <p className="text-warm-grey mt-2 source-serif-text">Your classic vehicle images coming soon</p>
+                  <div className="text-left">
+                    <p className="text-navy text-lg font-semibold source-serif-text">THE PROFESSIONAL CHAUFFEUR SERVICE</p>
+                    <p className="text-warm-grey text-sm source-serif-text">LONDON COUPES.COM</p>
+                    <p className="text-gold text-sm font-medium">ROVER P5B</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Clean Rover Image */}
+              <div className="aspect-video bg-navy/5 rounded-classic mb-8 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0">
+                  <Image
+                    src="/images/rover-p5b-front.jpg"
+                    alt="Classic Rover P5B - Distinguished Chauffeur Service Vehicle"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1200px"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent"></div>
+                </div>
+                <div className="relative z-10 text-center">
+                  <p className="text-cream text-xl source-serif-text font-semibold drop-shadow-lg">Distinguished Rover P5B Service</p>
+                  <p className="text-cream/90 mt-2 source-serif-text drop-shadow-md">Experience Classic British Luxury</p>
                 </div>
               </div>
               <div className="grid md:grid-cols-3 gap-8">
@@ -253,14 +294,7 @@ export default function Home() {
             </div>
             <div className="border-t border-cream/20 pt-6">
               <div className="flex items-center justify-center space-x-4 mb-3">
-                <div className="w-16 h-6 relative opacity-60">
-                  <Image
-                    src="/images/coupe-script.svg"
-                    alt="Coupé"
-                    fill
-                    className="object-contain"
-                  />
-                </div>
+                <span className="text-2xl italic font-serif" style={{ color: '#d4af37' }}>Coupé</span>
               </div>
               <p className="text-cream/60 text-sm source-serif-text">
                 © 2024 London Coupes. Preserving British automotive heritage with distinction.
