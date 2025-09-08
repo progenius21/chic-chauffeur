@@ -1,5 +1,5 @@
-import { forwardRef } from 'react'
 import { cn } from '@/utils/cn'
+import { forwardRef } from 'react'
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary'
@@ -17,7 +17,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             'border border-gold text-charcoal hover:bg-gold/10': variant === 'secondary',
             'h-9 px-4 py-2': size === 'sm',
             'h-11 px-6 py-3': size === 'default',
-            'h-14 px-8 py-4': size === 'lg',
+            'h-[44px] px-8 py-4': size === 'lg',
           },
           className
         )}

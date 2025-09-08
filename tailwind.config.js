@@ -7,6 +7,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        "max-sm": { max: "640px" },
+      },
       colors: {
         // Primary Colors
         navy: '#1a2332',
