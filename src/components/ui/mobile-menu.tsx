@@ -69,14 +69,14 @@ export function MobileMenu({ className }: MobileMenuProps) {
             <div className="flex flex-col h-full">
               {/* Header */}
               <div className="flex items-center justify-between p-6 border-b border-warm-grey/20">
-                <h2 className="text-lg font-semibold text-navy">Menu</h2>
+                <h2 className="text-lg font-semibold high-contrast-text">Menu</h2>
                 <button
                   onClick={closeMenu}
                   className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-warm-grey/10 transition-colors"
                   aria-label="Close menu"
                 >
                   <svg
-                    className="w-5 h-5 text-charcoal"
+                    className="w-5 h-5 high-contrast-text"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -99,7 +99,7 @@ export function MobileMenu({ className }: MobileMenuProps) {
                       <a
                         href={item.href}
                         onClick={closeMenu}
-                        className="block text-lg text-charcoal hover:text-navy transition-colors font-medium py-2"
+                        className="block text-lg readable-text hover:high-contrast-text transition-colors font-medium py-3 leading-relaxed"
                       >
                         {item.label}
                       </a>
@@ -118,7 +118,7 @@ export function MobileMenu({ className }: MobileMenuProps) {
                   Book Now
                 </Button>
                 <div className="text-center">
-                  <p className="text-sm text-warm-grey">
+                  <p className="text-sm text-warm-grey leading-relaxed">
                     Experience distinguished service
                   </p>
                 </div>
