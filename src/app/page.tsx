@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
+import { MobileMenu } from "@/components/ui/mobile-menu";
 import Image from "next/image";
 
 export default function Home() {
@@ -54,11 +55,12 @@ export default function Home() {
               </a>
               <Button size="lg">Book Now</Button>
             </nav>
-            {/* Mobile Menu Button */}
-            <div className="md:hidden flex items-center">
-              <Button size="lg" className="text-sm px-6 py-2 font-semibold">
+            {/* Mobile Menu */}
+            <div className="md:hidden flex items-center space-x-3">
+              <Button size="lg" className="text-sm px-4 py-2 whitespace-nowrap font-semibold">
                 Book Now
               </Button>
+              <MobileMenu />
             </div>
           </div>
         </Container>
