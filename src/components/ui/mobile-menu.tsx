@@ -2,6 +2,7 @@
 
 import { cn } from '@/utils/cn';
 import { useState } from 'react';
+import { useBooking } from './booking-provider';
 import { Button } from './button';
 
 interface MobileMenuProps {
@@ -10,6 +11,7 @@ interface MobileMenuProps {
 
 export function MobileMenu({ className }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const { openBookingModal } = useBooking();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -113,7 +115,10 @@ export function MobileMenu({ className }: MobileMenuProps) {
                 <Button
                   size="lg"
                   className="w-full"
-                  onClick={closeMenu}
+                  onClick={() => {
+                    closeMenu();
+                    openBookingModal();
+                  }}
                 >
                   Book Now
                 </Button>

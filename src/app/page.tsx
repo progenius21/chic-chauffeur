@@ -1,9 +1,16 @@
+"use client";
+
+import { useBooking } from "@/components/ui/booking-provider";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { MobileMenu } from "@/components/ui/mobile-menu";
 import Image from "next/image";
 
+
+
 export default function Home() {
+  const { openBookingModal } = useBooking();
+  
   return (
     <div className="min-h-screen [&_section]:mt-7">
       {/* Navigation Header */}
@@ -53,11 +60,11 @@ export default function Home() {
               >
                 Contact
               </a>
-              <Button size="lg">Book Now</Button>
+              <Button size="lg" onClick={openBookingModal}>Book Now</Button>
             </nav>
             {/* Mobile Menu */}
             <div className="md:hidden flex items-center space-x-3">
-              <Button size="lg" className="text-sm px-4 py-2 whitespace-nowrap font-semibold">
+              <Button size="lg" className="text-sm px-4 py-2 whitespace-nowrap font-semibold" onClick={openBookingModal}>
                 Book Now
               </Button>
               <MobileMenu />
@@ -96,6 +103,7 @@ export default function Home() {
               <Button
                 size="lg"
                 className="text-base sm:text-lg px-6 sm:px-8 md:px-10 w-full sm:w-auto"
+                onClick={openBookingModal}
               >
                 Book Your Journey
               </Button>
@@ -375,6 +383,7 @@ export default function Home() {
               <Button
                 size="lg"
                 className="bg-cream text-navy hover:bg-cream/90 w-full sm:w-auto"
+                onClick={openBookingModal}
               >
                 Book Your Journey
               </Button>

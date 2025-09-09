@@ -1,5 +1,6 @@
+import { BookingProvider } from '@/components/ui/booking-provider'
 import type { Metadata } from 'next'
-import { Playfair_Display, Source_Serif_4, Lora } from 'next/font/google'
+import { Lora, Playfair_Display, Source_Serif_4 } from 'next/font/google'
 import './globals.css'
 
 const playfair = Playfair_Display({
@@ -33,7 +34,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${sourceSerif.variable} ${lora.variable}`}>
       <body className="bg-cream text-charcoal antialiased">
-        <main className="min-h-screen">{children}</main>
+        <BookingProvider>
+          <main className="min-h-screen">{children}</main>
+        </BookingProvider>
       </body>
     </html>
   )
