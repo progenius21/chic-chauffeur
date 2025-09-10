@@ -271,8 +271,8 @@ export default function Home() {
             </div>
             <div className="bg-cream rounded-classic p-6 sm:p-8 md:p-12">
               {/* Logo Information Section */}
-              <div className="text-center mb-6 sm:mb-8">
-                <div className="inline-flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-4 bg-navy/5 px-4 sm:px-6 md:px-8 py-4 rounded-classic">
+              <div className="text-center mb-6 sm:mb-8  flex justify-start">
+                <div className="inline-flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-4 bg-navy/5 px-4 !pl-0 sm:px-6 md:px-8 py-4 rounded-classic">
                   <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 relative">
                     <Image
                       src="/images/london-coupes-original.png"
@@ -281,14 +281,14 @@ export default function Home() {
                       className="object-contain"
                     />
                   </div>
-                  <div className="text-center sm:text-left">
-                    <p className="text-navy text-sm sm:text-base md:text-lg font-semibold source-serif-text">
+                  <div className="text-center flex flex-col  sm:text-left ">
+                    <p className="text-navy text-sm !m-0 sm:text-base md:text-lg font-semibold source-serif-text">
                       THE PROFESSIONAL CHAUFFEUR SERVICE
                     </p>
-                    <p className="text-warm-grey text-xs sm:text-sm source-serif-text">
+                    <p className="text-warm-grey text-xs !m-0 sm:text-sm source-serif-text">
                       LONDON COUPES.COM
                     </p>
-                    <p className="text-gold text-xs sm:text-sm font-medium">
+                    <p className="text-gold text-xs !m-0 sm:text-sm font-medium">
                       ROVER P5B
                     </p>
                   </div>
@@ -297,7 +297,7 @@ export default function Home() {
 
               {/* Clean Rover Image */}
               <div className="aspect-video bg-navy/5 rounded-classic mb-6 sm:mb-8 flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0">
+                <div className="absolute inset-0 hover:scale-105 transition-all">
                   <Image
                     src="/images/rover-p5b-front.jpg"
                     alt="Classic Rover P5B - Distinguished Chauffeur Service Vehicle"
@@ -306,13 +306,13 @@ export default function Home() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1200px"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent bg-black/50"></div>
                 </div>
-                <div className="relative z-10 text-center px-4">
-                  <p className="text-cream text-lg sm:text-xl source-serif-text font-semibold drop-shadow-lg">
+                <div className="relative z-10 text-center px-4 ">
+                  <p className="text-white text-lg sm:text-xl source-serif-text font-semibold drop-shadow-lg">
                     Distinguished Rover P5B Service
                   </p>
-                  <p className="text-cream/90 mt-2 text-sm sm:text-base source-serif-text drop-shadow-md">
+                  <p className="text-white/90 mt-2 text-sm sm:text-base source-serif-text drop-shadow-md">
                     Experience Classic British Luxury
                   </p>
                 </div>
