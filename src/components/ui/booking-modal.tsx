@@ -1,5 +1,6 @@
 'use client'
 
+import { webConfig } from '@/utils/config'
 import { useEffect, useState } from 'react'
 import { Button } from './button'
 
@@ -75,7 +76,7 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
           {isLoaded ? (
             <div 
               className="calendly-inline-widget h-full"
-              data-url="https://calendly.com/your-username/executive-transport"
+              data-url={`https://calendly.com/${webConfig.calendlyUsername}/executive-transport`}
               style={{ minWidth: '320px', height: '600px' }}
             />
           ) : (

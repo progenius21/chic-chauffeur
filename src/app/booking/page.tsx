@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { Container } from '@/components/ui/container'
+import { webConfig } from '@/utils/config'
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -108,7 +109,7 @@ export default function BookingPage() {
               
               <div className="h-[700px]">
                 <iframe
-                  src="https://calendly.com/your-username/executive-transport"
+                  src={`https://calendly.com/${webConfig.calendlyUsername}/executive-transport`}
                   width="100%"
                   height="100%"
                   frameBorder="0"
