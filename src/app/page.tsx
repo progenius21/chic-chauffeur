@@ -271,8 +271,8 @@ export default function Home() {
             </div>
             <div className="bg-cream rounded-classic p-6 sm:p-8 md:p-12">
               {/* Logo Information Section */}
-              <div className="text-center mb-6 sm:mb-8  flex justify-start">
-                <div className="inline-flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-4 bg-navy/5 px-4 !pl-0 sm:px-6 md:px-8 py-4 rounded-classic">
+              <div className="text-center mb-6 sm:mb-8 flex justify-start max-sm:justify-center">
+                <div className="inline-flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-4 bg-navy/5 px-4 max-sm:!px-0 !pl-0 sm:px-6 md:px-8 py-4 rounded-classic">
                   <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 relative">
                     <Image
                       src="/images/london-coupes-original.png"

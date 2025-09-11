@@ -63,6 +63,7 @@ You can create separate Calendly links for each service type:
 - **File**: `src/components/ui/booking-modal.tsx`
 - **Usage**: Opens in a popup modal when "Book Now" buttons are clicked
 - **Benefits**: Keeps users on your website, seamless experience
+- **Implementation**: Uses iframe for reliable Calendly integration
 
 ### Page Integration (Option B)
 - **File**: `src/app/booking/page.tsx`

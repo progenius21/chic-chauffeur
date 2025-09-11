@@ -14,14 +14,8 @@ const BookingContext = createContext<BookingContextType | undefined>(undefined)
 export function BookingProvider({ children }: { children: ReactNode }) {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false)
 
-  const openBookingModal = () => {
-    console.log('Opening booking modal')
-    setIsBookingModalOpen(true)
-  }
-  const closeBookingModal = () => {
-    console.log('Closing booking modal')
-    setIsBookingModalOpen(false)
-  }
+  const openBookingModal = () => setIsBookingModalOpen(true)
+  const closeBookingModal = () => setIsBookingModalOpen(false)
 
   return (
     <BookingContext.Provider
