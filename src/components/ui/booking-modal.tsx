@@ -242,7 +242,7 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                   disabled={!isFormValid || isSubmitting}
                   className="flex-1"
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Booking Request'}
+                  {isSubmitting ? 'Sending...' : 'Send'}
                 </Button>
               </div>
             </form>
@@ -254,8 +254,8 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
           <div className="text-center">
             <p className="text-sm text-warm-grey">
               Need assistance? Contact us at{' '}
-              <a href="mailto:enquiries@londoncoupes.com" className="text-navy hover:underline">
-                enquiries@londoncoupes.com
+              <a href="mailto:londoncoupes@gmail.com" className="text-navy hover:underline">
+                londoncoupes@gmail.com
               </a>
             </p>
           </div>
