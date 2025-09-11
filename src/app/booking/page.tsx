@@ -1,14 +1,12 @@
-import { Button } from '@/components/ui/button'
-import { Container } from '@/components/ui/container'
-import { webConfig } from '@/utils/config'
-import { Metadata } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
+"use client";
 
-export const metadata: Metadata = {
-  title: 'Book Your Journey - London Coupes',
-  description: 'Schedule your distinguished chauffeur service with our classic Rover P5B.',
-}
+import { Button } from '@/components/ui/button';
+import { Container } from '@/components/ui/container';
+import { webConfig } from '@/utils/config';
+import Image from 'next/image';
+import Link from 'next/link';
+
+
 
 export default function BookingPage() {
   return (
@@ -16,7 +14,7 @@ export default function BookingPage() {
       {/* Header */}
       <header className="bg-white border-b border-warm-grey/20">
         <Container>
-          <div className="flex items-center justify-between py-4">
+          <div className="flex flex-wrap items-center justify-between py-4">
             <Link href="/" className="flex items-center space-x-3">
               <div className="w-16 h-16 relative">
                 <Image
@@ -33,8 +31,8 @@ export default function BookingPage() {
                 </p>
               </div>
             </Link>
-            <Link href="/">
-              <Button variant="secondary">← Back to Home</Button>
+            <Link href="/" className='ml-auto'>
+              <Button variant="secondary" className='whitespace-nowrap'>← Back to Home</Button>
             </Link>
           </div>
         </Container>
@@ -109,12 +107,15 @@ export default function BookingPage() {
               
               <div className="h-[700px]">
                 <iframe
-                  src={`https://calendly.com/${webConfig.calendlyUsername}/executive-transport`}
+                  src={webConfig.calendlyUrl}
                   width="100%"
                   height="100%"
                   frameBorder="0"
                   title="Booking Calendar"
                   className="border-0"
+                  onError={() => {
+                    console.error('Failed to load Calendly iframe')
+                  }}
                 />
               </div>
             </div>

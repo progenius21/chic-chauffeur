@@ -11,22 +11,49 @@ interface BookingModalProps {
 
 export function BookingModal({ isOpen, onClose }: BookingModalProps) {
   const [isLoaded, setIsLoaded] = useState(false)
+  const [hasError, setHasError] = useState(false)
+
+  // Debug logging
+  console.log('BookingModal render:', { isOpen, isLoaded, hasError })
 
   useEffect(() => {
     if (isOpen) {
+      // Reset states when modal opens
+      setHasError(false)
+      setIsLoaded(false)
+
+      // Check if Calendly script is already loaded
+      const existingScript = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]')
+      
+      if (existingScript) {
+        // Script exists, check if Calendly is available globally
+        if (typeof (window as any).Calendly !== 'undefined') {
+          setIsLoaded(true)
+          return
+        }
+      }
+
       // Load Calendly widget script
       const script = document.createElement('script')
       script.src = 'https://assets.calendly.com/assets/external/widget.js'
       script.async = true
-      script.onload = () => setIsLoaded(true)
+      script.onload = () => {
+        // Wait a bit for Calendly to initialize
+        setTimeout(() => {
+          setIsLoaded(true)
+        }, 100)
+      }
+      script.onerror = () => {
+        console.error('Failed to load Calendly widget script')
+        setIsLoaded(false)
+        setHasError(true)
+      }
       document.head.appendChild(script)
 
       return () => {
-        // Cleanup script when component unmounts
-        const existingScript = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]')
-        if (existingScript) {
-          document.head.removeChild(existingScript)
-        }
+        // Don't remove the script as it might be used by other components
+        // Just reset the loaded state
+        setIsLoaded(false)
       }
     }
   }, [isOpen])
@@ -73,12 +100,60 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
 
         {/* Calendly Widget */}
         <div className="h-[600px]">
-          {isLoaded ? (
-            <div 
-              className="calendly-inline-widget h-full"
-              data-url={`https://calendly.com/${webConfig.calendlyUsername}/executive-transport`}
-              style={{ minWidth: '320px', height: '600px' }}
-            />
+          {hasError ? (
+            <div className="flex items-center justify-center h-full">
+              <div className="text-center p-8">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-red-100 flex items-center justify-center">
+                  <span className="text-red-600 text-2xl">⚠️</span>
+                </div>
+                <h3 className="text-lg font-semibold text-navy mb-2">Booking System Unavailable</h3>
+                <p className="text-warm-grey mb-4">
+                  We're experiencing technical difficulties with our booking system.
+                </p>
+                <div className="space-y-2 text-sm text-warm-grey">
+                  <p>Please contact us directly:</p>
+                  <p className="font-medium text-navy">enquiries@londoncoupes.com</p>
+                  <p className="font-medium text-navy">+44 20 7XXX XXXX</p>
+                </div>
+                <Button 
+                  variant="secondary" 
+                  onClick={onClose}
+                  className="mt-4"
+                >
+                  Close
+                </Button>
+              </div>
+            </div>
+          ) : isLoaded ? (
+            <div className="h-full">
+              <div 
+                className="calendly-inline-widget h-full"
+                data-url={webConfig.calendlyUrl}
+                style={{ minWidth: '320px', height: '600px' }}
+              />
+              {/* Fallback iframe in case inline widget fails */}
+              <iframe
+                src={webConfig.calendlyUrl}
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                title="Booking Calendar Fallback"
+                className="border-0 hidden"
+                onLoad={() => {
+                  // If iframe loads successfully, hide the inline widget and show iframe
+                  const inlineWidget = document.querySelector('.calendly-inline-widget')
+                  const iframe = document.querySelector('iframe[title="Booking Calendar Fallback"]')
+                  if (inlineWidget && iframe) {
+                    setTimeout(() => {
+                      if (inlineWidget.children.length === 0) {
+                        inlineWidget.classList.add('hidden')
+                        iframe.classList.remove('hidden')
+                      }
+                    }, 2000)
+                  }
+                }}
+              />
+            </div>
           ) : (
             <div className="flex items-center justify-center h-full">
               <div className="text-center">

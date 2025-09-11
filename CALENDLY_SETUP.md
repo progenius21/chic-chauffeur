@@ -37,19 +37,18 @@ Create the following event types in your Calendly account:
 
 ### 4. Update Integration URLs
 
-After creating your Calendly account, update the following URLs in the code:
+After creating your Calendly account, update the configuration in `src/utils/config.ts`:
 
-#### In `src/components/ui/booking-modal.tsx` (line 60):
 ```tsx
-data-url="https://calendly.com/YOUR-USERNAME/executive-transport"
-```
-
-#### In `src/app/booking/page.tsx` (line 85):
-```tsx
-src="https://calendly.com/YOUR-USERNAME/executive-transport"
+export const webConfig = {
+    calendlyUsername: "YOUR-USERNAME",
+    calendlyUrl: "https://calendly.com/YOUR-USERNAME"
+}
 ```
 
 Replace `YOUR-USERNAME` with your actual Calendly username.
+
+**Note**: The system now uses your main Calendly page URL instead of specific event types. This ensures the booking system works even if specific event types haven't been created yet.
 
 ### 5. Optional: Create Multiple Event Types
 You can create separate Calendly links for each service type:
@@ -102,6 +101,35 @@ The booking modal and page use your existing design system:
 Update service descriptions, pricing, and contact information in:
 - `src/app/booking/page.tsx` (service cards and contact info)
 - `src/components/ui/booking-modal.tsx` (modal content)
+
+## Troubleshooting
+
+### Common Issues
+
+1. **Booking widget not loading**: 
+   - Check that your Calendly username is correct in `src/utils/config.ts`
+   - Verify your Calendly account is active and public
+   - Check browser console for JavaScript errors
+
+2. **404 errors on Calendly URLs**:
+   - Ensure your Calendly username exists (test at `https://calendly.com/YOUR-USERNAME`)
+   - The system now uses your main Calendly page instead of specific event types
+
+3. **Modal not opening**:
+   - Check that the BookingProvider is properly set up in your layout
+   - Verify all "Book Now" buttons are connected to the booking system
+
+4. **Script loading errors**:
+   - The system includes error handling and fallback UI
+   - Users will see contact information if Calendly fails to load
+
+### Error Handling
+
+The booking system now includes:
+- Automatic fallback UI when Calendly fails to load
+- Error logging to browser console
+- Contact information display for manual booking
+- Improved script loading with duplicate prevention
 
 ## Support
 
