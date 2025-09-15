@@ -16,9 +16,9 @@ export default function Home() {
       {/* Navigation Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-cream/95 backdrop-blur-sm border-b border-warm-grey/20">
         <Container>
-          <div className="flex items-center justify-between py-4 sm:py-5 md:py-6">
+          <div className="flex items-center justify-between py-1 sm:py-5 md:py-6">
             <div className="flex items-center space-x-3 sm:space-x-4">
-              <div className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 relative flex-shrink-0">
+              <div className="w-20 h-20 sm:w-18 sm:h-18 md:w-20 md:h-20 relative flex-shrink-0">
                 <Image
                   src="/images/london-coupes-original.png"
                   alt="London Coupes Logo"
