@@ -28,7 +28,7 @@ export default function Home() {
               </div>
               <div className="flex flex-col max-sm:justify-center   max-sm:items-center">
                 <h1 className="text-lg sm:text-xl md:text-2xl  text-navy mb-2 font-semibold leading-none sm:leading-tight mt-1 sm:mt-0">
-                  London Coupes
+                  London Coupés
                 </h1>
                 <p className="text-xs text-warm-grey text-left uppercase tracking-wider hidden sm:block mt-1">
                   Distinguished Service
@@ -96,7 +96,7 @@ export default function Home() {
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-warm-grey mb-8 sm:mb-10 md:mb-12 max-w-2xl mx-auto leading-relaxed source-serif-text px-2">
               Discover the epitome of classic British luxury with our bespoke
-              chauffeur service, featuring the iconic Rover P5B. Where heritage
+              chauffeur service, featuring the iconic P5B Coupé. Where heritage
               meets modern sophistication.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
@@ -111,6 +111,9 @@ export default function Home() {
                 variant="secondary"
                 size="lg"
                 className="text-base sm:text-lg px-6 sm:px-8 md:px-10 w-full sm:w-auto"
+                onClick={() => {
+                  location.assign("#services")
+                }}
               >
                 Learn More
               </Button>
@@ -118,8 +121,8 @@ export default function Home() {
             {/* Simple Chrome Script */}
             <div className="mt-8 sm:mt-10 md:mt-12 text-center">
               <h3
-                className="text-2xl sm:text-3xl md:text-4xl italic font-serif"
-                style={{ color: "#d4af37" }}
+                className="text-2xl text-[#4B8BCA] sm:text-3xl md:text-4xl italic font-serif"
+              
               >
                 Coupé
               </h3>
@@ -191,8 +194,8 @@ export default function Home() {
         {/* Subtle background branding */}
         <div className="absolute top-16 sm:top-20 right-4 sm:right-10 opacity-30">
           <span
-            className="text-3xl sm:text-4xl md:text-5xl italic font-serif"
-            style={{ color: "#d4af37" }}
+            className="text-3xl sm:text-4xl text-[#4B8BCA] md:text-5xl italic font-serif"
+          
           >
             Coupé
           </span>
@@ -363,13 +366,13 @@ export default function Home() {
               <div>
                 <h3 className="text-base sm:text-lg mb-2 sm:mb-3">Phone</h3>
                 <p className="text-sm sm:text-base text-cream/80 source-serif-text">
-                  +44 20 7XXX XXXX
+                   07943-097506
                 </p>
               </div>
               <div>
                 <h3 className="text-base sm:text-lg mb-2 sm:mb-3">Email</h3>
                 <p className="text-sm sm:text-base text-cream/80 source-serif-text">
-                  enquiries@londoncoupes.com
+                   info@londoncoupes.com
                 </p>
               </div>
               <div className="sm:col-span-2 md:col-span-1">
@@ -390,7 +393,7 @@ export default function Home() {
               <Button
                 variant="secondary"
                 size="lg"
-                className="border-cream text-cream hover:bg-cream/10 w-full sm:w-auto"
+                className="border-cream hidden text-cream hover:bg-cream/10 w-full sm:w-auto"
               >
                 Request Quote
               </Button>
@@ -422,8 +425,8 @@ export default function Home() {
             <div className="border-t border-cream/20 pt-4 sm:pt-6">
               <div className="flex items-center justify-center space-x-4 mb-2 sm:mb-3">
                 <span
-                  className="text-xl sm:text-2xl italic font-serif"
-                  style={{ color: "#d4af37" }}
+                  className="text-xl sm:text-2xl text-[#4B8BCA] italic font-serif"
+                 
                 >
                   Coupé
                 </span>

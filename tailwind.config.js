@@ -15,6 +15,7 @@ export default {
         navy: '#1a2332',
         cream: '#f8f6f2',
         gold: '#d4af37',
+        accent: '#4B8BCA',
         charcoal: '#2c2c2c',
         // Secondary Colors
         'warm-grey': '#6b6b6b',

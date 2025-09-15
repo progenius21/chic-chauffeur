@@ -14,7 +14,7 @@ export const emailConfig = {
 export const emailSettings = {
   from: process.env.EMAIL_USER || 'noreply@londoncoupes.com',
   to: process.env.BOOKING_EMAIL_RECIPIENT || 'enquiries@londoncoupes.com',
-  subject: 'New Booking Request - London Coupes',
+  subject: 'New Booking Request - London Coupés',
 };
 
 // Service options for the booking form

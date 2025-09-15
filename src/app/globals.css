@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+:root {
+  --accent: "#4B8BCA"
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

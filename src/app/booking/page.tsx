@@ -152,16 +152,16 @@ export default function BookingPage() {
                 </p>
                 <div className="grid sm:grid-cols-3 gap-6 text-sm">
                   <div>
-                    <h4 className="font-semibold mb-2">Phone</h4>
-                    <p className="text-cream/80">+44 20 7XXX XXXX</p>
+                    <h4 className="font-semibold mb-2">Mobile</h4>
+                    <p className="text-cream/80">07943-097506</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2">Landline</h4>
+                    <p className="text-cream/80">0208-252-4193</p>
                   </div>
                   <div>
                     <h4 className="font-semibold mb-2">Email</h4>
-                    <p className="text-cream/80">enquiries@londoncoupes.com</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">Location</h4>
-                    <p className="text-cream/80">Central London, UK</p>
+                    <p className="text-cream/80">info@londoncoupes.com</p>
                   </div>
                 </div>
               </div>
