@@ -407,7 +407,7 @@ export default function Home() {
         <Container>
           <div className="text-center px-4">
             <div className="flex items-center justify-center space-x-2 sm:space-x-3 mb-4 sm:mb-6">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 relative">
+              <div className="w-17 h-17 sm:w-17 sm:h-17  relative">
                 <Image
                   src="/images/london-coupes-original.png"
                   alt="London Coupes Logo"
