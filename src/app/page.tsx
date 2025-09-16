@@ -6,8 +6,6 @@ import { Container } from "@/components/ui/container";
 import { MobileMenu } from "@/components/ui/mobile-menu";
 import Image from "next/image";
 
-
-
 export default function Home() {
   const { openBookingModal } = useBooking();
   
